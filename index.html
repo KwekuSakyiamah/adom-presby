@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grace Community Church</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #1a5f7a;
+    color: #fff;
+    text-align: center;
+    padding: 3rem 1rem;
+    position: relative;
+}
+
+.logo {
+    max-width: 150px;
+    margin: 0 auto 1rem;
+}
+
+.logo img {
+    width: 100%;
+    object-fit: contain;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #2c3e50;
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 1rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #3a4f63;
+}
+
+.burger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #fff;
+    font-size: 1.5rem;
+    z-index: 101;
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        background-color: #2c3e50;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        z-index: 100;
+    }
+
+    nav ul.active {
+        right: 0;
+    }
+
+    nav ul li {
+        margin: 2.5rem 0;
+    }
+}
+
+/* Main Sections */
+section {
+    padding: 4rem 2rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Section */
+#hero {
+    background: url('images/preview (3).webp') center/cover no-repeat;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#hero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for visibility */
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    backdrop-filter: blur(5px); /* Adds a subtle blur effect */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5); /* Text shadow for contrast */
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+    padding: 1rem 2rem;
+    background-color: #2d89ef;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1b6fbf;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    #hero {
+        height: 70vh;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.25rem;
+    }
+
+    .btn {
+        padding: 0.75rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero {
+        height: 60vh;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+
+/* Section Content */
+.section-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+}
+
+.section-text {
+    flex: 1;
+    min-width: 280px;
+}
+
+.section-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.section-image img:hover {
+    transform: scale(1.05);
+}
+/* About Us Section */
+#about {
+    background-color: #f4f7fb;
+    padding: 2rem;
+    text-align: center;
+}
+
+#about .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+#about .about-item {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    position: relative;
+}
+
+#about .about-item img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#about .about-item i {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 2rem;
+}
+
+
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    header {
+        padding: 2rem 1rem;
+    }
+
+    .logo {
+        max-width: 100px;
+    }
+
+    #hero {
+        padding: 4rem 1rem;
+    }
+
+    .section-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section-image img {
+        width: 100%;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+    }
+
+    .slider img {
+        height: 300px;
+    }
+
+    .slider-arrow {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+}
+
+/* About Us Section */
+#about {
+    background-color: #f4f7fb;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    color: #2d89ef;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+#about-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.about-tab {
+    background-color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: #2d89ef;
+}
+
+.about-tab i {
+    font-size: 1.75rem;
+}
+
+.about-tab:hover {
+    background-color: #2d89ef;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.about-tab.active {
+    background-color: #2d89ef;
+    color: #fff;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about-item {
+    display: none;
+    text-align: center;
+}
+
+.about-item img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.about-item img:hover {
+    transform: scale(1.05);
+}
+
+.about-item p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.about-item.active {
+    display: block;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .about-tabs {
+        flex-direction: column;
+    }
+
+    .about-tab {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-item img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Announcements Section */
+#announcements-activities {
+    background-color: #f4f7fb;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+}
+
+#announcements-activities h3 {
+    font-size: 2rem;
+    color: #2d89ef;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.announcement-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.announcement-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.announcement-item:hover {
+    background-color: #e3f2fd;
+    transform: translateY(-5px);
+}
+
+.announcement-item .date {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555;
+    background-color: #2d89ef;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.announcement-item p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+    .announcement-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .announcement-item p {
+        margin-left: 0;
+    }
+}
+
+/* Services Section */
+#services {
+    background-color: #f4f7fb;
+    padding: 4rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+#services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2d89ef;
+}
+
+#services p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.service-item {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+}
+
+.service-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.service-toggle {
+    background-color: transparent;
+    border: none;
+    color: #2d89ef;
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.service-toggle i {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.service-toggle:hover i {
+    transform: rotate(45deg);
+}
+
+.service-content {
+    display: none;
+    padding: 1rem 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.service-item.active .service-content {
+    display: block;
+}
+
+.service-item.active .service-toggle i {
+    transform: rotate(45deg);
+}
+
+.service-item.active .service-toggle {
+    color: #1b6fbf;
+}
+
+@media (max-width: 768px) {
+    #services {
+        padding: 2rem 1rem;
+    }
+
+    .service-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Events Section */
+#events {
+    background-color: #f4f7fb;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#events h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.events-list {
+    list-style: none;
+    padding: 0;
+}
+
+.event-item {
+    background-color: #fff;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.event-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.event-item i {
+    color: #2d89ef;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.event-item i:hover {
+    color: #1b6fbf;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #events h2 {
+        font-size: 2rem;
+    }
+
+    .event-item {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .event-item i {
+        font-size: 1.3rem;
+    }
+}
+
+
+
+/* Contact Section */
+#contact {
+    background-color: #f4f7fb;
+    padding: 4rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2d89ef;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.contact-form, .contact-info {
+    flex: 1;
+    min-width: 280px;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 1px solid #2d89ef;
+}
+
+.contact-form button {
+    padding: 0.75rem 1.5rem;
+    background-color: #2d89ef;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #1b6fbf;
+}
+
+.contact-info h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: #2d89ef;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-info p {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #333;
+}
+
+.contact-info i {
+    color: #2d89ef;
+    font-size: 1.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    #contact h2 {
+        font-size: 2rem;
+    }
+
+    .contact-info p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.social-media a {
+    color: #fff;
+    font-size: 2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #f0f0f0;
+    transform: scale(1.2);
+}
+
+footer p {
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+/* To ensure content doesn't overlap with the footer */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .social-media {
+        gap: 1rem;
+    }
+
+    .social-media a {
+        font-size: 1.75rem;
+    }
+
+    footer p {
+        font-size: 0.875rem;
+    }
+}
+/* Credit Union Section */
+#credit-union {
+    background-color: #f4f4f4;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+    border-radius: 8px;
+}
+
+#credit-union i {
+    font-size: 4rem;
+    color: #2d89ef;
+    margin-bottom: 1rem;
+}
+
+#credit-union h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+#credit-union p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#credit-union a.btn {
+    display: inline-block;
+    background-color: #2d89ef;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#credit-union a.btn:hover {
+    background-color: #1b5fa3;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    #credit-union i {
+        font-size: 3rem;
+    }
+
+    #credit-union h2 {
+        font-size: 1.75rem;
+    }
+
+    #credit-union p {
+        font-size: 1rem;
+    }
+
+    #credit-union a.btn {
+        padding: 0.5rem 1rem;
+    }
+}
+
+
+
+/* Slider */
+#image-slider {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slider img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(45, 137, 239, 0.7);
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-arrow:hover {
+    background-color: rgba(45, 137, 239, 1);
+}
+
+.slider-arrow.prev {
+    left: 1rem;
+}
+
+.slider-arrow.next {
+    right: 1rem;
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="images/pres.jpg" alt="Grace Community Church Logo">
+        </div>
+        <h1>Adom Presby Church</h1>
+        <p>Building Faith, Hope, and Love</p>
+     <div id="daily-inspiration">
+    <div class="inspiration-container">
+        <div class="memory-verse">
+            <h3><i class="fas fa-book-open"></i> Memory Verse of the Day</h3>
+            <blockquote id="verse-text">
+                <!-- Bible verse will be dynamically inserted here -->
+            </blockquote>
+        </div>
+        <div class="hymn-of-day">
+            <h3><i class="fas fa-music"></i> Hymn of the Day</h3>
+            <p class="hymn-title" id="hymn-title"> <!-- Hymn title here --> </p>
+            <p class="hymn-author" id="hymn-author"> <!-- Hymn author here --> </p>
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <button class="burger">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#hero"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li><a href="services.html"><i class="fas fa-hands-helping"></i> Services</a></li>
+                <li><a href="#events"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                <li><a href="school.html"><i class="fas fa-school"></i> School</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+    <div class="hero-content">
+        <h2>Welcome to Grace Community Church</h2>
+        <p>Your place of worship and community connection</p>
+        <a href="#contact" class="btn">Get in Touch</a>
+    </div>
+</section>
+
+<section id="image-slider">
+    <h2><i class="fas fa-images"></i> Our Community</h2>
+    <div class="slider-container">
+        <div class="slider">
+            <img src="images/big hug.jpg" alt="Community Image 1">
+            <img src="images/out.jpg" alt="Community Image 2">
+            <img src="images/preview (3).webp" alt="Community Image 3">
+            <img src="images/preview (1).webp" alt="Community Image 4">
+        </div>
+        <button class="slider-arrow prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+</section>
+
+    <!-- About Us Section -->
+<section id="about">
+    <h2>About Us</h2>
+    <div class="about-tabs">
+        <div class="about-tab active" data-tab="community">
+        
+            <i class="fas fa-hands-helping"></i> 
+            <p>We build and foster strong communities through service and  Godly shared values.</p>
+        </div>
+        <div class="about-tab" data-tab="worship">
+            <i class="fas fa-praying-hands"></i> 
+            <p>Our worship is rooted in faith, bringing people together for a shared spiritual journey.</p>
+        </div>
+        <div class="about-tab" data-tab="charity">
+            <i class="fas fa-heart"></i> 
+            <p>Giving back to those in need is at the core of our values, fostering love and support.</p>
+        </div>
+    </div>
+    <div class="about-content">
+        <div class="about-item" id="community">
+            <img src="https://source.unsplash.com/featured/?community" alt="Community">
+            <p>We build and foster strong communities through service and shared values.</p>
+        </div>
+        <div class="about-item" id="worship" style="display: none;">
+            <img src="https://source.unsplash.com/featured/?worship" alt="Worship">
+            <p>Our worship is rooted in faith, bringing people together for a shared spiritual journey.</p>
+        </div>
+        <div class="about-item" id="charity" style="display: none;">
+            <img src="https://source.unsplash.com/featured/?charity" alt="Charity">
+            <p>Giving back to those in need is at the core of our values, fostering love and support.</p>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Announcements & Activities Section -->
+<section id="announcements-activities">
+    <div class="container">
+        <div class="announcements">
+            <h3><i class="fas fa-bullhorn"></i> Announcements</h3>
+            <ul class="announcement-list">
+                <li class="announcement-item">
+                    <span class="date">Sep 15</span>
+                    <p>Special guest speaker this Sunday: Dr. John Smith</p>
+                </li>
+                <li class="announcement-item">
+                    <span class="date">Sep 20</span>
+                    <p>Youth group car wash fundraiser</p>
+                </li>
+                <li class="announcement-item">
+                    <span class="date">Sep 25</span>
+                    <p>Community outreach program starts</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Services Section -->
+<section id="services">
+    <h2>Our Services</h2>
+    <p>We offer a variety of services that cater to the spiritual and social needs of our community. Click on each service to learn more.</p>
+    <div class="service-list">
+        <div class="service-item">
+            <button class="service-toggle">
+                <i class="fas fa-plus-circle"></i> Worship Services
+            </button>
+            <div class="service-content">
+                <p>Join us for uplifting worship every Sunday morning, where we gather as a community to praise and connect with God.</p>
+            </div>
+        </div>
+        <div class="service-item">
+            <button class="service-toggle">
+                <i class="fas fa-plus-circle"></i> Counseling and Support
+            </button>
+            <div class="service-content">
+                <p>Our pastoral team offers spiritual counseling and support to help guide you through life's challenges with faith and compassion.</p>
+            </div>
+        </div>
+        <div class="service-item">
+            <button class="service-toggle">
+                <i class="fas fa-plus-circle"></i> Youth Programs
+            </button>
+            <div class="service-content">
+                <p>Our youth programs provide a safe and fun environment for young people to learn, grow, and connect with their peers.</p>
+            </div>
+        </div>
+        <div class="service-item">
+            <button class="service-toggle">
+                <i class="fas fa-plus-circle"></i> Community Outreach
+            </button>
+            <div class="service-content">
+                <p>We are committed to serving our community through various outreach programs that bring hope and help to those in need.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- School Section -->
+    <section id="school">
+        <i class="fas fa-school"></i>
+        <h2>Our School</h2>
+        <div class="school-content">
+            <div class="text">
+                <p>Our school provides a nurturing environment for children to grow academically and spiritually. We focus on holistic education and character development, preparing our students for a bright future.</p>
+            </div>
+            <div class="image">
+                <img src="https://source.unsplash.com/featured/?school" alt="School">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Events Section -->
+<section id="events">
+    <h2>Upcoming Events</h2>
+    <ul class="events-list">
+        <li class="event-item"><i class="fas fa-church"></i> Sunday Worship Service - 10:00 AM</li>
+        <li class="event-item"><i class="fas fa-users"></i> Community Potluck - September 15th</li>
+        <li class="event-item"><i class="fas fa-book"></i> Bible Study Group - Wednesdays at 7:00 PM</li>
+    </ul>
+</section>
+
+    <!-- Credit Union Section -->
+    <section id="credit-union">
+        <i class="fas fa-piggy-bank"></i>
+        <h2>Grace Community Credit Union</h2>
+        <p>Our credit union is open to the general public, offering competitive rates and personalized financial services to help you achieve your financial goals.</p>
+        <p>Whether you're saving for the future, looking for a loan, or need financial advice, we're here to serve you with integrity and care.</p>
+        <a href="#contact" class="btn">Learn More</a>
+    </section>
+
+       <!-- Contact Section -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-container">
+        <div class="contact-form">
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSfQ1wBU3Bd5UogFS-PkQ8nzlc31TecJr650yybFpG1oVydN7g/viewform?usp=sf_link" method="post"> </form>
+                <label for="name"><i class="fas fa-user"></i> Name</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message"><i class="fas fa-comment-alt"></i> Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+            </form>
+        </div>
+        
+        <div class="contact-info">
+            <h3><i class="fas fa-phone-alt"></i> Reach Us</h3>
+            <p><i class="fas fa-phone"></i> +233 123 456 789</p>
+            <p><i class="fas fa-map-marker-alt"></i> 123 Church Street, Accra, Ghana</p>
+            <p><i class="fas fa-envelope"></i> info@gracechurch.com</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+   <footer>
+    <div class="social-media">
+        <a href="https://www.facebook.com/gracecommunity" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/gracecommunity" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.x.com/gracecommunity" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+            <i class="fab fa-x-twitter"></i>
+        </a>
+    </div>
+    <p>&copy; 2024 Grace Community Church. All rights reserved.</p>
+</footer>
+
+
+    <!-- Scripts -->
+    <script>
+        document.querySelectorAll('.service-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const serviceItem = button.parentElement;
+                serviceItem.classList.toggle('active');
+            });
+        });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.querySelector('.slider');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let slideIndex = 0;
+
+    function showSlide(index) {
+        const slides = slider.querySelectorAll('img');
+        if (index >= slides.length) slideIndex = 0;
+        if (index < 0) slideIndex = slides.length - 1;
+        slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+        slideIndex--;
+        showSlide(slideIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        slideIndex++;
+        showSlide(slideIndex);
+    });
+
+    // Optional: Add touch swipe functionality for mobile devices
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    slider.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    slider.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchStartX - touchEndX > 50) {
+            slideIndex++;
+            showSlide(slideIndex);
+        } else if (touchEndX - touchStartX > 50) {
+            slideIndex--;
+            showSlide(slideIndex);
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const verseText = document.getElementById("verse-text");
+    const hymnTitle = document.getElementById("hymn-title");
+    const hymnAuthor = document.getElementById("hymn-author");
+
+    // Predefined list of hymns
+    const hymns = [
+        { title: "Amazing Grace", author: "John Newton" },
+        { title: "How Great Thou Art", author: "Carl Boberg" },
+        { title: "Be Thou My Vision", author: "Traditional Irish" },
+        { title: "Great is Thy Faithfulness", author: "Thomas Chisholm" },
+        { title: "Holy, Holy, Holy", author: "Reginald Heber" }
+        // Add more hymns if desired
+    ];
+
+    async function fetchVerse() {
+        try {
+            // Example API call to fetch a specific verse; adjust as needed
+            const response = await fetch("https://bible-api.com/john+3:16");
+            const data = await response.json();
+            const verse = `${data.text} - ${data.reference}`;
+            verseText.innerHTML = verse; // Update the verse content
+        } catch (error) {
+            console.error("Error fetching Bible verse:", error);
+            verseText.innerHTML = "Unable to load verse. Please try again later.";
+        }
+    }
+
+    function displayHymn() {
+        // Select a hymn based on the day
+        const today = new Date().getDate(); // Day of the month
+        const hymn = hymns[today % hymns.length]; // Rotate through hymns
+        hymnTitle.textContent = hymn.title;
+        hymnAuthor.textContent = `by ${hymn.author}`;
+    }
+
+    // Call functions to load verse and hymn on page load
+    fetchVerse();
+    displayHymn();
+});
+
+
+    </script>
+</body>
+</html>
+
